@@ -1,0 +1,12 @@
+from flask import Flask
+
+app = Flask(__name__)
+
+
+@app.route('/')
+def home():  # put application's code here
+    return "<center><h3>Welcome to Cloud Book Store!</h3></center>"
+
+
+if __name__ == '__main__':
+    app.run()
