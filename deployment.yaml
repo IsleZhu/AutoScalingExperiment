@@ -15,12 +15,13 @@ spec:
       containers:
       - name: flask-app-container
         image: autoscaling:latest
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 5000
         resources:
-          requests:
-            memory: "256Mi"   # Set memory request
-            cpu: "100m"       # Set CPU request
           limits:
-            memory: "512Mi"   # Set memory limit
-            cpu: "250m"       # Set CPU limit
+            cpu: 400m
+            memory: 256Mi
+          requests:
+            cpu: 200m
+            memory: 128Mi
